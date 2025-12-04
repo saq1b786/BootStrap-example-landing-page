@@ -1,0 +1,51 @@
+/* --- HERO SECTION --- */
+.hero-section {
+  position: relative;
+  min-height: 60vh;              /* visible height (change to 70vh/80vh if you want bigger) */
+  display: flex;
+  align-items: center;           /* vertical centering */
+  overflow: hidden;
+}
+
+/* background image layer (fills the section) */
+.hero-bg {
+  position: absolute;
+  inset: 0;                      /* top:0 right:0 bottom:0 left:0 */
+  background-image: url("images/hero.jpg"); /* change path or use a URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.55);      /* darken image so text reads well */
+  z-index: 0;
+}
+
+/* optional color overlay (alternative to filter) */
+/* .hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+} */
+
+/* content sits above the bg */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;              /* controls text line length */
+  padding: 2rem 1rem;            /* space inside content box */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .hero-content {
+    text-align: center;
+    align-items: center !important;
+  }
+  .hero-content h1 { font-size: 1.6rem; }
+}
+
+/* optional small style for CTA spacing on mobile */
+@media (max-width: 575.98px) {
+  .hero-content .btn { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
